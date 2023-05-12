@@ -52,7 +52,6 @@ void ElementarElement::Move()
 }
 void ElementarElement::GravitationalForce(ElementarElement* element)
 {
-	///std::cout << x << " " << element->x << std::endl;
 	float r = pow(pow((x - element->x), 2) + pow((y - element->y), 2), 3.0 / 2);
 
 	Wx += G * element->M * (element->x - x) / r;
@@ -60,11 +59,6 @@ void ElementarElement::GravitationalForce(ElementarElement* element)
 
 	element->Wx -= G * M * (element->x - x) / r;
 	element->Wy -= G * M * (element->y - y) / r;
-}
-
-void ElementarElement::Cout()
-{
-	std::cout << "x: " << x << " y: " << y << " Vx: " << Vx << " Vy: " << Vy << "Wx: " << Wx << "Wy: " << Wy << " M = " << M << " R = " << R << '\n';
 }
 
 bool ElementarElement::ClashReporter(ElementarElement& element)
